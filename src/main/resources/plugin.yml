@@ -1,0 +1,21 @@
+name: item-forge
+version: ${project.version}
+main: com.hoangtulangtoc.ItemForgePlugin
+api-version: '1.20'
+author: hoangtulangtoc
+description: Custom item system for Paper servers
+
+commands:
+  item-forge:
+    aliases: [itemforge]
+    description: Manage item-forge custom items
+    usage: /item-forge <give|reload|list|generate|analyze>
+    permission: item-forge.admin
+
+permissions:
+  item-forge.admin:
+    default: op
+  itemforge.admin:
+    default: op
+    children:
+      item-forge.admin: true

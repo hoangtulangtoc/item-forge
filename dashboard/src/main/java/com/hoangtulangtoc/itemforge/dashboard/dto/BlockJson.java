@@ -1,0 +1,23 @@
+package com.hoangtulangtoc.itemforge.dashboard.dto;
+
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+public record BlockJson(
+        String id,
+        String instrument,
+        int note,
+        @JsonProperty("texture-id") String textureId,
+        @JsonProperty("drop-item-id") String dropItemId,
+        @JsonProperty("display-name") String displayName,
+        @JsonProperty("custom-model-data") int customModelData,
+        List<String> lore) {
+
+    /** The display name as plain text, for anywhere it is shown rather than edited. */
+    @JsonIgnore
+    public String plainDisplayName() {
+        return MinecraftText.stripColorCodes(displayName);
+    }
+}

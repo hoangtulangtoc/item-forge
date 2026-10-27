@@ -1,0 +1,58 @@
+**.class
+target/
+
+HELP.md
+.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+
+# Excludes for npm
+node_modules
+node
+
+# Log output from local tooling (e.g. ttcli) -- never contains anything worth
+# committing, only personal paths/noise.
+*.log
+
+### Docker deployment (install.sh / docker-compose.yml) ###
+# .env holds real secrets (API token, bcrypt hash) and must never be committed.
+.env
+# install.sh writes these when you choose to reconfigure; they carry the same secrets.
+.env.bak.*
+# A copy of the jar for the container to mount -- not an artifact worth storing.
+/item-forge.jar
+/itemforge.jar
+# World and config of the Paper server running under Docker, including the
+# config.yml that carries the real token.
+/server-data/
+# Dashboard container data: the reference texture library an admin imported
+# (their resource packs, not assets belonging to this project).
+/dashboard-data/
